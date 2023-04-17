@@ -18,22 +18,6 @@
 import VuexCard from "src/components/VuexCard.vue";
 import PiniaOptionsCard from "src/components/PiniaOptionsCard.vue";
 import PiniaSetupCard from "src/components/PiniaSetupCard.vue";
-import { useStore } from "vuex";
-import { computed } from "vue";
-
-const vuexStore = useStore();
-const vuexCounter = computed({
-  get() {
-    return vuexStore.state.counter.counter;
-  },
-  set(value) {
-    vuexStore.commit("counter/setCounter", value);
-  },
-});
-const vuexDouble = computed(() => vuexStore.getters["counter/doubleCount"]);
-async function vuexIncrement() {
-  await vuexStore.dispatch("counter/increment");
-}
 </script>
 
 <style lang="scss">

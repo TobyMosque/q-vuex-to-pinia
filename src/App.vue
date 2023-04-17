@@ -2,10 +2,11 @@
   <router-view />
 </template>
 
-<script>
-import { defineComponent } from 'vue'
+<script setup>
+import { onMounted } from "vue";
+import { enabled } from "src/composables/prefetch";
 
-export default defineComponent({
-  name: 'App'
-})
+if (process.env.CLIENT) {
+  onMounted(() => (enabled.value = true));
+}
 </script>
